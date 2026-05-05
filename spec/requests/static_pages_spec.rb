@@ -4,25 +4,25 @@ RSpec.describe "StaticPages", type: :request do
   it "should get home" do
     get root_path
     expect(response).to have_http_status(:success)
-    expect(response.body).to include("<title>Ruby Debugger Demo</title>")
+    expect(response.body).to include("<title>Gobo</title>")
   end
 
   it "should get help" do
     get help_path
     expect(response).to have_http_status(:success)
-    expect(response.body).to include("<title>Help | Ruby Debugger Demo</title>")
+    expect(response.body).to include("<title>Help | Gobo</title>")
   end
 
   it "should get about" do
     get about_path
     expect(response).to have_http_status(:success)
-    expect(response.body).to include("<title>About | Ruby Debugger Demo</title>")
+    expect(response.body).to include("<title>About | Gobo</title>")
   end
 
   it "should get contact" do
     get contact_path
     expect(response).to have_http_status(:success)
-    expect(response.body).to include("<title>Contact | Ruby Debugger Demo</title>")
+    expect(response.body).to include("<title>Contact | Gobo</title>")
   end
 
   describe "vote" do

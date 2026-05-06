@@ -31,6 +31,7 @@ class CodeTrackerController < ApplicationController
     @git_repository_url = fetch_git_repository_url
     @git_commit_sha = fetch_git_commit_sha
     @agent_address = fetch_agent_address
+    @agent_environment_label = fetch_agent_environment_label
   end
 
   def load_registry_data

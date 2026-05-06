@@ -30,6 +30,9 @@
         <strong>Agent:</strong>
         <% if agent_address %>
           <code><%= agent_address %></code>
+          <% if local_assigns[:agent_environment_label].present? %>
+            <span class="label label-default"><%= agent_environment_label %></span>
+          <% end %>
         <% else %>
           <span class="text-muted">Unknown</span>
         <% end %>

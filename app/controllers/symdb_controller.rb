@@ -73,6 +73,7 @@ class SymdbController < ApplicationController
     @git_commit_sha = fetch_git_commit_sha
     @symdb_enabled = symdb_enabled?
     @agent_address = fetch_agent_address
+    @agent_environment_label = fetch_agent_environment_label
     @component_status = fetch_component_status
     @upload_info = fetch_upload_info
 

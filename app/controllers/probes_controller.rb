@@ -13,6 +13,7 @@ class ProbesController < ApplicationController
     @git_commit_sha = fetch_git_commit_sha
     @di_enabled = fetch_di_enabled_status
     @agent_address = fetch_agent_address
+    @agent_environment_label = fetch_agent_environment_label
 
     respond_to do |format|
       format.html

@@ -81,5 +81,5 @@ When the controller integrates with dd-trace-rb, include a test context simulati
 
 The test command is:
 ```
-DD_TRACER=/real.home/claude-dtr-2/dtr bundle exec rspec
+DD_TRACER=~/dtr bundle exec rspec
 ```

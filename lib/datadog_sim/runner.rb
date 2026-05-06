@@ -41,6 +41,9 @@ module DatadogSim
         runtime_id:         options.fetch(:runtime_id, SecureRandom.uuid),
         service:            options.fetch(:service, ENV.fetch('DD_SERVICE', 'simulated-service')),
         env:                options.fetch(:env, ENV.fetch('DD_ENV', 'development')),
+        # Default differs from bin/simulate_service's '1.42.42' so the
+        # emitted version reveals which code path built the Runner:
+        # '1.42' = bin/simulate_service was bypassed and this default fired.
         version:            options.fetch(:version, ENV.fetch('DD_VERSION', '1.42')),
         agent_host:         options.fetch(:agent_host, ENV.fetch('DD_AGENT_HOST', 'localhost')),
         agent_port:         options.fetch(:agent_port, ENV.fetch('DD_TRACE_AGENT_PORT', '8126').to_i),

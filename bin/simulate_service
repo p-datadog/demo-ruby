@@ -59,6 +59,9 @@ options = {
   language:   ENV.fetch('DD_SIM_LANGUAGE', 'ruby'),
   service:    ENV.fetch('DD_SERVICE', 'demo-ruby'),
   env:        ENV.fetch('DD_ENV', 'development'),
+  # Default differs from DatadogSim::Runner's library default ('1.42')
+  # so the emitted version reveals which code path built the Runner:
+  # '1.42.42' = via this entry point; '1.42' = some caller bypassed it.
   version:    ENV.fetch('DD_VERSION', '1.42.42'),
   components: { telemetry: true, remote_config: true, traces: true },
 }

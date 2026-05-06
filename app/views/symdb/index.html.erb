@@ -20,12 +20,6 @@
           &mdash; versions registered for this service
         </li>
         <li>
-          <%= link_to "Uploaded files",
-            "#{symdb_base}/files?service=#{encoded_service}&allow_partial=true",
-            target: "_blank" %>
-          &mdash; list of source files in the upload
-        </li>
-        <li>
           <%= link_to "Search scopes",
             "#{symdb_base}/scopes/search?service=#{encoded_service}&query=SymdbSamples&allow_partial=true",
             target: "_blank" %>

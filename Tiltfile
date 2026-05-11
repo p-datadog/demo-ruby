@@ -6,7 +6,7 @@
 # /usr/local/lib/dd-tilt/ (which requires root to set up).
 
 load(
-    os.path.join(os.environ.get("HOME", ""), "devtools/devenv/tilt/tilt_functions/kubernetes/load_context.sky"),
+    "../dd/devtools/devenv/tilt/tilt_functions/kubernetes/load_context.sky",
     "load_context",
 )
 

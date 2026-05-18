@@ -132,8 +132,8 @@ def wait_for_boot(pid, timeout: 120)
       raise "puma did not respond within #{timeout}s (see #{PUMA_LOG})"
     end
     begin
-      Net::HTTP.start(HOST, PORT, open_timeout: 1, read_timeout: 2) do |http|
-        resp = http.get('/up')
+      Net::HTTP.start(HOST, PORT, open_timeout: 1, read_timeout: 5) do |http|
+        resp = http.get('/stress/simple')
         return if (200..399).include?(resp.code.to_i)
       end
     rescue StandardError

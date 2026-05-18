@@ -10,11 +10,16 @@ preload_app!
 plugin :tmp_restart
 
 on_worker_boot do
-  # Re-open appenders after forking the process
-  SemanticLogger.reopen
-
   if ENV['SYMDB_EXTRACT_LOOP'] == 'true'
-    require Rails.root.join('lib/stress/extraction_loop').to_s
-    Stress::ExtractionLoop.start!
+    require ::Rails.root.join('lib/stress/extraction_loop').to_s
+    ::Stress::ExtractionLoop.start!
+  end
+
+  # Re-open appenders after forking the process
+  begin
+    ::SemanticLogger.reopen
+  rescue NameError
+    # SemanticLogger constant not visible in Puma::DSL on_worker_boot context;
+    # appenders will continue using their pre-fork file handles.
   end
 end
